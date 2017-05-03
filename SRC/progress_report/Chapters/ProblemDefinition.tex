@@ -1,0 +1,30 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%			PROBLEM DEFINITION
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Research Problems}
+
+\paragraph{}
+The key problem that this research paper will be targeting is the feasibility of implementing a separate DC power distribution system for the specific purpose of powering LED lighting circuits and simple electronics. Additionally, the goal is to implement these systems into a commercial building and apartment setting within Australia. For a stronger understanding and case study, Brisbane city will be analysed due to high illuminance and numerous high rises. Designs will be tested predominately through software simulations however hardware will be used where it is technically and financially feasible. In order to answer this key question and complete the project, sub questions were separated and discussed.
+
+\begin{enumerate}
+\itemsep-0.5em 
+\item Can direct current power be a suitable alternative to alternating current when efficiencies and costs are compared?
+\item What is the optimal voltage level for a low voltage DC system when considering loads, costs and efficiencies?
+\item If feasible, how can a photo-voltaic system be implemented to power these circuits?
+\item Can lighting load and lux requirements be met through this system?
+\item If feasible financially and technically, how can the proposed power distribution methods be implemented in commercial buildings effectively?
+\end{enumerate} 
+
+\subsection{Initial Design Consideration}
+
+\paragraph{}
+The research completed and discussions with the project supervisor has allowed for an initial concept for what could be a feasible design. The main design constraints are that cable lengths need to be short, the power generation should be with photovoltaic (PV) systems and due to load constraints, many micro-grids should be used. To do this, with tall and thin buildings it would be possible to use PV cells instead of shading or window awnings to generate electricity. Each floor has their own cells and generates electricity to power their lighting and simple electronics. 
+
+\paragraph{}
+Utilising Steven Donohue's findings of 48\,V\,DC being the most suitable voltage level for these forms  of systems, the plan is to base calculations off the assumption he was correct \cite{Donohue2014}. The cables being run would follow Australian building standards at 2.5\,\si{mm^2} , 2 core and earth and would easily provide the necessary current carrying capacity. These cables would feed to separate, dedicated switchboards for a purely DC supply and then through to LEDs where a highly efficient DC-DC converter needs to be found or designed. Each floor would therefore have it's own switchboard to power an area between 50\,\si{m^2} and 100\,\si{m^2} although further calculations are required to confirm this. An office space is approximately 9\,\si{m^2} requiring only 4 LEDs to provide necessary lux levels meaning the load for lighting should not exceed 40\,W and at 48\,V\,DC this equates to only 0.83\,A. With multiple rooms such as this, the design should be feasible with further simulations.
+
+\paragraph{}
+These initial considerations have been expanded on throughout the investigation with more detailed analysis and simulations. Section \ref{section:draft-floor-plan} outlines the above calculations however with access to QUT data as well as technical knowledge from research more accurate designs and calculations were completed in Section \ref{section:project-model}.    
+
+\newpage

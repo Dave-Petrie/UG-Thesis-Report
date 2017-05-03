@@ -1,0 +1,55 @@
+\section{Project Questions} \label{section:project-questions}
+
+\paragraph{}
+The following section will technically analyse the five questions that this project will analyse. Due to the fact this is a progress report and not the final, there are not solutions to all answers however mechanisms put in place so that the solutions can be found. If a question has not been solved and discussed below, there will be milestones in place within the time line and discussions on reaching the goals in Section 8.
+
+\subsection{What Is The Optimal Voltage Level When Considering Loads, Costs and Efficiencies?} \label{section:question1}
+
+\paragraph{}
+To determine what voltage level would be optimal for the suggested distribution systems, research was enlisted over technical tests. The previous QUT student, Steven Donohue did extensive research on this aspect of the solution in 2014 for his project Extra Low Voltage In-Home Power Distribution and Storage 48 V DC. For the purpose of investing time more efficiently, this project relies on the quality of his research for the basis of this question. 
+
+\paragraph{}
+With battery storage implementations, there are some restrictions on that voltage level for the solution. Batteries may or may not be implemented into this project's solution, however it is important to understand the fundamentals behind the voltage level decisions. There is a large amount of literature suggesting that 48 V DC is the best option due to the efficiency levels with standard loads. When a 240 V AC home power system was compared with DC it was found that the 48 V DC system used 22\% less and a 120 V DC used 18\% less \cite{Donohue2014}. 
+
+\paragraph{}
+An additional factor that is arguably more important is current differences affecting cable sizing requirements. As the voltage level is increased, the current required to power loads will be decreased following the relationship Power = Voltage * Current (P=VI). The table below represents brief calculations using 24, 48 and 96 V DC with two different loads to calculate approximate cable sizing. Although reducing cable sizes is important, an alternative comparison method is the distance that cables can be run. By using less current, cables of the same size can be run further distances without suffering from too high voltage drops. The voltage drop is the factor that affects a system's efficiency level. Therefore, when the voltage drop can be reduced from a 24 V DC system to 48 V DC system, the efficiency is being increased. Table \ref{table:DC-Resistances} below shows the DC resistances from TriCAB cable suppliers \cite{website:triCAB} and Table \ref{table:lvdc-cables} shows approximate cable areas required for different DC voltages and loads.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|l|l|}
+\hline
+\multicolumn{3}{|c|}{\textbf{Conductor DC Resistance}}                                                                                        \\ \hline
+\multicolumn{1}{|c|}{\textbf{Cable Size (mm\textasciicircum 2)}} & \multicolumn{1}{c|}{\textbf{Ohm/Km}} & \multicolumn{1}{c|}{\textbf{Ohm/m}} \\ \hline
+0.5                                                              & 39                                   & 0.039                               \\ \hline
+0.75                                                             & 26                                   & 0.026                               \\ \hline
+1                                                                & 19.5                                 & 0.0195                              \\ \hline
+1.5                                                              & 13.3                                 & 0.0133                              \\ \hline
+2.5                                                              & 7.98                                 & 0.00798                             \\ \hline
+4                                                                & 4.95                                 & 0.00495 \\ 
+\hline     
+\end{tabular}
+\caption{TriCAB Catalogue DC Resistance Cable \cite{website:triCAB}}
+\label{table:DC-Resistances}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|l|l|p{5cm}|}
+\hline
+\multicolumn{1}{|c|}{\textbf{Load (Watts)}} & \multicolumn{1}{c|}{\textbf{Voltage (Volts)}} & \textbf{Current (A)} & \textbf{Approximate Cable Size (\si{mm^2})} \\ \hline
+100 & 24 & 4.16 & 1 \\ \hline
+100 & 48 & 2.08 & 1 \\ \hline
+100 & 96 & 1.041 & 1 \\ \hline
+500 & 24 & 20.83 & 5 \\ \hline
+500 & 48 & 10.42 & 2 \\ \hline
+500 & 96 & 5.21 & 1 \\ \hline
+\end{tabular}
+\caption{Cable Sizing As Per Voltage Level}
+\label{table:lvdc-cables}
+\end{table} 
+
+\paragraph{}
+With these factors considered and the extensive literature review supporting the choice of 48\,V\,DC, at this stage of the project this voltage level will be chosen. Simulations of this level will be run in further questions and analysis applications to determine if it is suitable when applied to commercial buildings.  
+
+   
+
