@@ -64,6 +64,26 @@
 \usepackage{rotating}
 \usepackage{epstopdf}
 
+% Hyphen Fixing
+
+\usepackage[none]{hyphenat}
+
+% Minus Sign
+\usepackage{xparse}
+
+% Defining a new subsubsubsection and fixing Table of Contents
+%%%%%%%%
+\usepackage{titlesec}
+\setcounter{secnumdepth}{4}
+
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+\setcounter{tocdepth}{4}
+%%%%%
+
 %Chapter headings
 %\usepackage[compact]{titlesec}
 
