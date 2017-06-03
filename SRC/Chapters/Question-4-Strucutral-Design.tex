@@ -1,27 +1,91 @@
 \subsection{Structural Design and Safety Mechanisms to Minimise Cable Losses}
 
 %New Paragraph
-****
-\newline
-This section is intentionally blank. The report is a work in progress and this part of future works.  
+This section will be answering design specific questions such as how the building will be structured electronically including PV mounting and locations as well as general building size limitations. Once building size and PV requirements are determined, electrical infrastructure sizing including switchboard and circuit breakers will be suggested. Finally, a summary of cable lengths with losses and efficiencies will be produced to determine the maximum distance between the PV array and luminaires before the system loses its value.     
 
-\subsubsection{Mounting of Panels}
+\subsubsection{Safety and Design}
 
 %New Paragraph
-****
-\newline
-This section is intentionally blank. The report is a work in progress and this part of future works.  
+Safety is integral to any design and specifically with electricity as it is difficult to see visual risks. If safety requirements are ignored, there can be severe consequences ranging from damage to property, loss of career or death. A variety of protective devices are installed in power systems in order to ensure safety design including circuit breakers, fuses and residual current devices. An initial requirement with the installation of DC systems over AC is the increased possibility of an arc flash. During installation, considerations must be made to ensure that the end point does not remain energised upon disconnection from the supply.   
+
+
+\subsubsection{Mounting of Panels} \label{section:mounting-panels}
+
+%New Paragraph
+Section \ref{section:photovoltatic-mounting} within the literature review outlines the possible mounting options that could be employed for the project model. Due to commercial buildings having a limited amount of roof area, single axis tracking modules are not as suitable due to the ground coverage ratio (GCR) being higher to reduced self-shading. The ground coverage ratio outlines a percentage of land required for the array based on the spacings in the design. GCR is used to calculate total required area following the formula: 
+\begin{center}
+\textit{Total Required Area = Module Area / GCR + Laneway Allowance}
+\end{center}  
+Due to these reasons, to maximise the efficiency and production potential a fixed mounting system will be utilised. As discussed in Section \ref{section:brisbane-pv-modelling}, modelling will be completed on the assumption of tilt being equal to the latitude and the modules facing directly North. In QUT P Block, the panels are facing North-East but that is also due to the location of the building specifically.         
+
+\subsubsection{Location}
+
+%New Paragraph
+The location of the building is, as discussed, assumed to be within Brisbane city. During design and construction it must be considered that the location should not have tall buildings surrounding the roof section causing shadowing. For this project, it will be assumed that this is possible. 
 
 \subsubsection{Electrical Safety Devices}
 
 %New Paragraph
-****
-\newline
-This section is intentionally blank. The report is a work in progress and this part of future works.  
+As in Section \ref{section:litreview-converters} of the literature review there are a variety of commercially available DC to DC converters and switchgear on the market. Fraunhofer electronics have designed low and extra low voltage converters with efficiency levels of 98\% \cite{website:Fraunhofer}. Protection devices such as solid-state circuits and hybrid breakers are now technically feasible as a solution for power systems \cite{Sechilariu2015}. Devices with 12, 24 or 48\,V\,DC nominal inputs and outputs at a variety of current limites are commercially available. An example system that could be used is the NewMar DC Power Distribution Panel with Plug-In Circuit Breakers to operate as a mini dedicated ELV switchboard \cite{website:PoweringTheNetwork}.      
 
 \subsubsection{Cable Lengths and Efficiencies}
 
 %New Paragraph
-****
-\newline
-This section is intentionally blank. The report is a work in progress and this part of future works.  
+Minimising the length of cables is a method of control to reduce the losses of the system and therefore the overall efficiency. What lengths of cable will be possible before the losses become too high. AS/NZS 3000 states that the voltage drop between the point of supply for the LV installation and any other point cannot exceed 5\,\% \cite{StandardsAustralia2007}. There is however an exception where the point of supply substation is location on premises that is dedicated to the installation, the permissible voltage drop is 7\,\% \cite{StandardsAustralia2007}. The voltage drop over a conductor is calculated using Ohm's Law and will indicate the efficiency possible. The lighting circuits will not require large cables. To expand,
+\begin{center}
+	\textit{Voltage Drop = Length * Current * Milivolts Per Ampere Metre}\cite{website:triCAB}
+\end{center}  
+
+
+%New Paragraph
+To do a simple efficiency comparison of standard cable runs, appropriate assumptions were made for a loss comparison of an example cable run from the supply board to the device driver. This comparison ignores the losses that would be seen in the AC luminaire driver converting from 240\,V\,AC to 48\,V DC. Two cable sizes were compared as they are used within industry for simple power and lighting circuits with specifications gathered from TriCab \cite{website:triCAB}. As per Figure \ref{fig:dialux-office-workplane-summary}, this calculation is based off one room's lighting circuit with eight, 36\,W luminaires installed. As expected, the losses in the DC system are higher for the same cable length. The results are shown in Table \ref{table: AC-vs-DC-simple}. 
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|l|c|c|c|c|c|c|c|}
+		\hline
+		& \multicolumn{1}{l|}{\textbf{Cable (\si{mm^2})}} & \multicolumn{1}{l|}{\textbf{R (Ohms/km)}} & \multicolumn{1}{l|}{\textbf{W}} & \multicolumn{1}{l|}{\textbf{V}} & \multicolumn{1}{l|}{\textbf{I}} & \multicolumn{1}{l|}{\textbf{Length}} & \multicolumn{1}{l|}{\textbf{Drop (\%)}} \\ \hline
+		AC & 1.5 & 13.3 & 288 & 240 & 3 & 50 & 0.8 \\ \hline
+		DC & 1.5 & 13.3 & 288 & 48 & 3 & 50 & 4.0 \\ \hline
+		AC & 2.5 & 7.98 & 288 & 240 & 0.6 & 50 & 0.5 \\ \hline
+		DC & 2.5 & 7.98 & 288 & 48 & 0.6 & 50 & 2.4 \\ \hline
+	\end{tabular}
+	\caption{AC vs DC Simple Cable Voltage Drop Comparison}
+	\label{table: AC-vs-DC-simple}
+\end{table}  
+
+%New Paragraph
+As discussed previously, according to AS/NZS 3000, a power system with a localised supply has a maximum voltage drop of 7\% from point of supply to load \cite{StandardsAustralia2007}. According to AS/NZS 5033 which regulates the installation and safety requirements for photovoltaic arrays, the maximum allowable voltage drop should not exceed 3\% of the maximum operating voltage (Vmp) for low voltage, photovoltaic arrays \cite{StandardsAustralia2014}. This is measured from the most remote PV module in the array to the input of the power converter. 
+\newline 
+
+%New Paragraph
+The proposed design will be an extra low voltage system rather than low voltage. The specified modules are Suntech 265\,W monocrystalline panels with a maximum operating voltage of 31\,V. Become modules are run in series, the voltages will add and then the 3\% voltage drop will be analysed against that figure. Therefore, there is required to be a balance between cable lengths increasing the drop to an acceptable level without exceeding the limit imposed by Australian Standards. Table \ref{table: AC-vs-DC-lengths} outlines a simple comparison of losses vs length for a 2.5\,\si{mm^2} cable run and the same loads as used for Table \ref{table: AC-vs-DC-simple}. 
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|l|l|l|}
+		\hline
+		\textbf{Cable Length (m)} & \textbf{AC Losses (\%)} & \textbf{DC Losses (\%)} \\ \hline
+		25 & 0.24 & 1.20 \\ \hline
+		50 & 0.48 & 2.39 \\ \hline
+		75 & 0.72 & 3.59 \\ \hline
+		100 & 0.96 & 4.79 \\ \hline
+		125 & 1.20 & 5.99 \\ \hline
+		150 & 1.44 & 7.18 \\ \hline
+		175 & 1.68 & 8.38 \\ \hline
+		200 & 1.92 & 9.58 \\ \hline
+		225 & 2.15 & 10.77 \\ \hline
+		250 & 2.39 & 11.97 \\ \hline
+		275 & 2.63 & 13.17 \\ \hline
+		300 & 2.87 & 14.36 \\ \hline
+		325 & 3.11 & 15.56 \\ \hline
+		350 & 3.35 & 16.76 \\ \hline
+		375 & 3.59 & 17.96 \\ \hline
+		400 & 3.83 & 19.15 \\ \hline
+	\end{tabular}
+	\caption{AC vs DC 2.5\,\si{mm^2} Cable Losses vs Length Breakdown}
+	\label{table: AC-vs-DC-lengths}
+\end{table} 
+
+%New Paragraph
+From Table \ref{table: AC-vs-DC-lengths} it can be seen that the DC losses are far more significant. This was of course expected due to the lower voltage level requiring a higher current level than the AC counterpart. Assuming a PV array with modules in strings of approximately ten units, the maximum operation voltage will total to 310\,V. 3\% of this value is 9.3\,V. 9.3\,V is 19\% of 48\,V allowing for a much larger allowable drop than AC. Table \ref{table: AC-vs-DC-lengths} is an exageration however does provide insight. AC system's maximum voltage drop is from the supply to the load with a variety of conversion devices in between whereas the DC will have less distance and no required inverter.         
